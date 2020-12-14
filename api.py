@@ -6,13 +6,13 @@ client_id=56916
 secret='a72efb336085286ec673c4b3c73b0517c18a1ba3'
 @app.route("/")
 def home():
-    code = request.args.get('code')
-    print(code)
+    # code = request.args.get('code')
+    # print(code)
 
-    # #post request
-    # clientData = {'client_id':client_id,'client_secret':secret,'code':code,'grant_type':'authorization_code'}
-    # accessUrl = 'https://www.strava.com/oauth/token'
-    UseCode(code)
+    # # #post request
+    # # clientData = {'client_id':client_id,'client_secret':secret,'code':code,'grant_type':'authorization_code'}
+    # # accessUrl = 'https://www.strava.com/oauth/token'
+    # UseCode(code)
     
     # url='https://www.strava.com/api/v3/oauth/token?client_id=56916&client_secret=a72efb336085286ec673c4b3c73b0517c18a1ba3&code=a39a4dd1f047e74be086becfbfe7dea0b723c67c&grant_type=authorization_code' % code
     # print(url)
