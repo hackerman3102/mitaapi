@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import request
+
 import requests
 app = Flask(__name__)
 client_id=56916
@@ -27,8 +28,9 @@ def home():
 # def callback():
 #     return "whatever!"
     
-
-
+@app.route("/extractData")
+def home():
+  return "redirecting"
 def UseCode(code):
  
 
@@ -46,6 +48,7 @@ def UseCode(code):
     atr=requests.post(accessUrl,data=clientData,verify=True).json()
     access_token=atr['access_token']
     print("afsd")
+    
   except:
       print("failed")  
 #   accessTokenRequest = requests.post(accessUrl,data=clientData).json()
