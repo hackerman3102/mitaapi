@@ -29,7 +29,7 @@ def home():
 #     return "whatever!"
     
 @app.route("/extractData")
-def home():
+def home2():
   return "redirecting"
 def UseCode(code):
  
