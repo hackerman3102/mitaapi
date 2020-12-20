@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import request
-
+import webbrowser
 import requests
 app = Flask(__name__)
 client_id=56916
@@ -22,6 +22,8 @@ def home():
     
     # accessTokenRequest = requests.post(accessUrl,data=clientData).json()["access_token"]
     # print("access token is "+accessTokenRequest)
+    
+
     return "You will be redirected to the app once verification is completed"
 
 # @app.route("/callback")
@@ -48,7 +50,7 @@ def UseCode(code):
     atr=requests.post(accessUrl,data=clientData,verify=True).json()
     access_token=atr['access_token']
     print("afsd")
-    
+    webbrowser.open('https://mitaapi.herokuapp.com/extractData?code='+access_token)
   except:
       print("failed")  
 #   accessTokenRequest = requests.post(accessUrl,data=clientData).json()
