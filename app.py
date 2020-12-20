@@ -56,8 +56,9 @@ def UseCode(code):
     time.sleep(1.5)
     
     webbrowser.open('https://mitaapi.herokuapp.com/extractData?code='+access_token)
-  except:
-      print("failed")  
+  except Exception as e:
+      print("failed")
+      print(e)  
 #   accessTokenRequest = requests.post(accessUrl,data=clientData).json()
 #   print(accessTokenRequest['access_token'])
 
