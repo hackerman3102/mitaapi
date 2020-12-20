@@ -2,6 +2,7 @@ from flask import Flask
 from flask import request
 import webbrowser
 import requests
+import time
 app = Flask(__name__)
 client_id=56916
 secret='a72efb336085286ec673c4b3c73b0517c18a1ba3'
@@ -50,6 +51,10 @@ def UseCode(code):
     atr=requests.post(accessUrl,data=clientData,verify=True).json()
     access_token=atr['access_token']
     print("afsd")
+
+
+    time.sleep(1.5)
+    
     webbrowser.open('https://mitaapi.herokuapp.com/extractData?code='+access_token)
   except:
       print("failed")  
