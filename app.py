@@ -55,7 +55,7 @@ def UseCode(code):
 
     time.sleep(1.5)
     
-    webbrowser.open('https://mitaapi.herokuapp.com/extractData?code='+access_token)
+    webbrowser.open('https://mitaapi.herokuapp.com/extractData?code='+access_token,1,True)
   except Exception as e:
       print("failed")
       print(e)  
