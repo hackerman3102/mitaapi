@@ -26,7 +26,7 @@ def home():
     # print("access token is "+accessTokenRequest)
     
 
-    return "Your code is"+code
+    return "Your code is  "+code
 
 # @app.route("/callback")
 # def callback():
@@ -51,7 +51,7 @@ def UseCode(code):
     print("hey")
     atr=requests.post(accessUrl,data=clientData,verify=True).json()
     access_token=atr['access_token']
-    print("afsd")
+    print("access_token  ",access_token)
     redirect("https://mitaapi.herokuapp.com/extractData?code="+access_token,302)
     
     
