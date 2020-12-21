@@ -26,7 +26,7 @@ def home():
     # print("access token is "+accessTokenRequest)
     
 
-    return redirect("https://mitaapi.heroku.com/extractData?code="+access_token,302)
+    return redirect("https://mitaapi.herokuapp.com/extractData?code="+access_token,302)
 
 # @app.route("/callback")
 # def callback():
