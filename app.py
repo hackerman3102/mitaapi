@@ -26,7 +26,7 @@ def home():
     # print("access token is "+accessTokenRequest)
     
 
-    return "You will be redirected to the app once verification is completed"+code
+    return "Your code is"+code
 
 # @app.route("/callback")
 # def callback():
