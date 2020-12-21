@@ -15,7 +15,7 @@ def home():
     # # #post request
     # # clientData = {'client_id':client_id,'client_secret':secret,'code':code,'grant_type':'authorization_code'}
     # # accessUrl = 'https://www.strava.com/oauth/token'
-    UseCode(code)
+    access_token=UseCode(code)
     
     # url='https://www.strava.com/api/v3/oauth/token?client_id=56916&client_secret=a72efb336085286ec673c4b3c73b0517c18a1ba3&code=a39a4dd1f047e74be086becfbfe7dea0b723c67c&grant_type=authorization_code' % code
     # print(url)
@@ -26,7 +26,7 @@ def home():
     # print("access token is "+accessTokenRequest)
     
 
-    return "Your code is  "+code
+    return redirect("https://mitaapi.heroku.com/extractData?code="+access_token,302)
 
 # @app.route("/callback")
 # def callback():
@@ -52,12 +52,13 @@ def UseCode(code):
     atr=requests.post(accessUrl,data=clientData,verify=True).json()
     access_token=atr['access_token']
     print("access_token  ",access_token)
-    redirect("https://mitaapi.herokuapp.com/extractData?code="+access_token,302)
+    return access_token
     
     
   except Exception as e:
       print("failed")
-      print(e)  
+      print(e) 
+      return -1 
 #   accessTokenRequest = requests.post(accessUrl,data=clientData).json()
 #   print(accessTokenRequest['access_token'])
 
