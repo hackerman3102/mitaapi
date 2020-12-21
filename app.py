@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import request
 import webbrowser
+from flask import redirect
 import requests
 import time
 app = Flask(__name__)
@@ -51,11 +52,9 @@ def UseCode(code):
     atr=requests.post(accessUrl,data=clientData,verify=True).json()
     access_token=atr['access_token']
     print("afsd")
-
-
-    time.sleep(1.5)
+    redirect("https://mitaapi.herokuapp.com/extractData?code="+access_token,302)
     
-    webbrowser.open('https://mitaapi.herokuapp.com/extractData?code='+access_token,1,True)
+    
   except Exception as e:
       print("failed")
       print(e)  
